@@ -27,8 +27,16 @@ class BaseGacha {
             this.sortType = locals.sortType;
 
             return `${SNAPSHOT_BASE_URL}&q=${this.query}` +
-                `&_offset=${this.#generateOffset()}&_sort=${this.sortType}`;
+                `&_offset=${this.generateOffset()}&_sort=${this.sortType}`;
         })
+    }
+
+    /**
+     * インスタンスに設定された下限順位以下のランダムな自然数を返す
+     * @return {number}
+     */
+    generateOffset(){
+        return Math.floor(Math.random() * this.border);
     }
 
     /**
@@ -39,13 +47,5 @@ class BaseGacha {
      */
     generateSeekTime(max, lastMargin=DEFAULT_LAST_MARGIN){
         return Math.floor(Math.random() * Math.max(max-lastMargin, 0))
-    }
-
-    /**
-     * インスタンスに設定された下限順位以下のランダムな自然数を返す
-     * @return {number}
-     */
-    #generateOffset(){
-        return Math.floor(Math.random() * this.border);
     }
 }
