@@ -7,6 +7,7 @@
  */
 // ※ここにWebhookURLをコピペする※
 
+
 /**
  * ニコニコ動画の動画詳細情報取得APIのエンドポイント
  * @see {@link https://dic.nicovideo.jp/a/%E3%83%8B%E3%82%B3%E3%83%8B%E3%82%B3%E5%8B%95%E7%94%BBapi#:~:text=getthumbinfo}
