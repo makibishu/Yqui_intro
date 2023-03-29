@@ -1,0 +1,43 @@
+#gachaBox {
+    display: flex;
+    background: aliceblue;
+    padding: 0 20px;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+}
+
+#songInfo {
+    width: 420px;
+}
+
+#authorInfo {
+    width: 20%;
+    padding: 10px;
+    margin: auto;
+    font-size: 20px;
+    text-align: center;
+}
+
+button {
+    background-color: white;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 0.9rem;
+    line-height: 1.75;
+    letter-spacing: 0.02857em;
+    min-width: 64px;
+    padding: 0 10px;
+    border-radius: 4px;
+    border: 1px solid rgba(66, 66, 66, 0.5);
+    color: rgb(66, 66, 66);
+    margin: 30px 5px;
+}
+
+button:hover:enabled {
+    background-color: rgba(66, 66, 66, 0.04);
+    border: 1px solid rgb(66, 66, 66);
+}
+
+button:disabled{
+    cursor: not-allowed;
+    background-color: darkgray;
+}

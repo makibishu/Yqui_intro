@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Yqui-intro",
+  "description": "Yquiでのイントロクイズ出題サポート",
+  "version": "0.10",
+  "icons": {
+    "16" : "pic/icon/icon_16.png",
+    "48" : "pic/icon/icon_48.png",
+    "128" : "pic/icon/icon_128.png"
+  },
+  "action": {
+    "default_icon": "pic/icon/icon_16.png",
+    "default_popup": "options.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://yqui.net/*"],
+      "css": ["style.css"],
+      "js": ["constants.js", "movie.js", "BaseGacha.js", "Gacha.js","main.js"]
+    }
+  ],
+  "background": {
+    "service_worker": "fetch.js"
+  },
+  "permissions": [
+    "tabs",
+    "storage"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ]
+}
