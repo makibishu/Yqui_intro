@@ -18,7 +18,7 @@ Yquiの画面上でガチャ・再生を一括操作できるChrome拡張機能�
 * [【開発者向け】ガチャのカスタマイズ](#開発者向けガチャのカスタマイズ)
 
 # 動作イメージ
-![image](\pic\image.png)
+![image](pic/image.png)
 
 # 前提
 PC版Google Chromeが必要です。
@@ -31,20 +31,20 @@ Mac OS・Linux等は動作確認していませんが、**たぶん**使える�
 ①このページの上部にある「<>Code▼」という緑色のボタンをクリック
 
 ②「Download ZIP」をクリックし、好きな場所に保存、解凍する
-![installation1](\pic\installation_1.PNG)
+![installation1](pic/installation_1.PNG)
 
 ③解凍したフォルダの中から、「fetch.js」というファイルを探し、「メモ帳」などで開く
 
 ④9行目「// ※ここにWebhookURLをコピペする※」の下に、別途Discordで送った1行を貼り付けて保存
 
-![instllation2](\pic\installation_2.PNG)
+![instllation2](pic/installation_2.PNG)
 
 ⑤PC版GoogleChromeでchrome://extensions/を開き、右上の「デベロッパーモード」をオンにする
 
 ⑥「パッケージ化されていない拡張機能を読み込む」を選択し、先ほど解凍したフォルダを選択
 
 ※もしかしたらこの手順のあと「安全性が確認されていません。本当に有効にしますか？」みたいな注意が出るかもしれないですが、安全なのでそのまま読み込んでください。
-![installation3](\pic\installation_3.PNG)
+![installation3](pic/installation_3.PNG)
 
 # 使い方
 Yquiの部屋を作り、司会になれば自動で読み込まれると思います。
@@ -59,7 +59,7 @@ DiscordBotの再生機能を使うには、事前にDiscordの方で「$join」�
 Botの設定画面は、Chrome右上にあるジグソーパズルのようなボタンを押して、Yqui-introの部分をクリックすると表示されます。
 右の画鋲のようなボタンを押しておくとジグソーパズルの横に表示されて便利です。
 
-![usage](\pic\usage.jpg)
+![usage](pic/usage.jpg)
 
 # 困ったときは
 まきびしに直接聞け！
