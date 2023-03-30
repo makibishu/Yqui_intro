@@ -64,6 +64,14 @@ Botの設定画面は、Chrome右上にあるジグソーパズルのような�
 # 困ったときは
 まきびしに直接聞け！
 
+# 投げ銭
+音楽botなどを動かすためのレンタルサーバー代が毎月かかっています。
+
+今後の継続的な開発・運営のためにご協力頂けると嬉しいです。
+
+- [pixiv FANBOX](https://makibishu.fanbox.cc/)
+- [Amazon欲しいものリスト](https://www.amazon.jp/hz/wishlist/ls/8O9UJH6950ZV?ref_=wl_share)
+
 # 【開発者向け】ガチャのカスタマイズ
 Gacha.js内のGachaクラスに定義されたメソッドを書き換えることで、ある程度自由にガチャのアルゴリズムを変えられる仕様になっています。
 
