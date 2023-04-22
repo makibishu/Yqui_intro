@@ -17,7 +17,7 @@
     text-align: center;
 }
 
-button {
+.extraButton {
     background-color: white;
     cursor: pointer;
     font-weight: 500;
@@ -32,12 +32,12 @@ button {
     margin: 30px 5px;
 }
 
-button:hover:enabled {
+.extraButton:hover:enabled {
     background-color: rgba(66, 66, 66, 0.04);
     border: 1px solid rgb(66, 66, 66);
 }
 
-button:disabled{
+.extraButton:disabled{
     cursor: not-allowed;
     background-color: darkgray;
 }

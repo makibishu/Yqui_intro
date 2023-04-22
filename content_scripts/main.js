@@ -43,21 +43,25 @@ function initialize(root){
 
     const playButton = document.createElement('button');
     playButton.setAttribute('id', 'playButton');
+    playButton.setAttribute('class', 'extraButton');
     playButton.onclick = play;
     playButton.textContent = 'この曲を再生';
 
     const resumeButton = document.createElement('button');
     resumeButton.setAttribute('id', 'resumeButton');
+    resumeButton.setAttribute('class', 'extraButton');
     resumeButton.onclick = pause;
     resumeButton.textContent = '一時停止/再開';
 
     const stopButton = document.createElement('button');
     stopButton.setAttribute('id', 'stopButton');
+    stopButton.setAttribute('class', 'extraButton');
     stopButton.onclick = stop_;
     stopButton.textContent = '停止';
 
     const gachaButton = document.createElement('button');
     gachaButton.setAttribute('id', 'gachaButton');
+    gachaButton.setAttribute('class', 'extraButton');
     gachaButton.onclick = doGacha;
     gachaButton.textContent = '次の曲へ'
 
