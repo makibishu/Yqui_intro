@@ -8,22 +8,27 @@
 <body>
     <form name="options">
         <div>
-            <label for="query">検索ワード</label><br>
+            <label for="query"><b>検索ワード</b></label><br>
             <input id="query" name="query" type="text" autocomplete="off" size="50" required>
         </div>
         <div>
-            <label for="border">下限順位(1~99,999)</label><br>
+            <label for="border"><b>下限順位(1~99,999)</b></label><br>
             <input id="border" name="border" type="text" pattern="^[1-9]\d*$" maxlength="5" autocomplete="off">
         </div>
         <div>
-            <label>ソート</label><br>
+            <label><b>期間絞り込み</b></label><br>
+            <label for="dateStart">from:</label><input id="dateStart" name="dateFilter" type="date">
+            <label for="dateEnd">to:</label><input id="dateEnd" name="dateFilter" type="date">
+        </div>
+        <div>
+            <label><b>ソート</b></label><br>
             <label><input id="viewSort" name="sortType" type="radio" value="viewCounter">再生数順</label>
             <label><input id="mylistSort" name="sortType" type="radio" value="mylistCounter">マイリスト数順</label>
             <label><input id="commentSort" name="sortType" type="radio" value="commentCounter">コメント数順</label>
             <label><input id="likeSort" name="sortType" type="radio" value="likeCounter">いいね数順</label>
         </div>
         <div>
-            <label>モード</label><br>
+            <label><b>モード</b></label><br>
             <label><input id="intro" name="mode" type="radio" value="intro">イントロ</label>
             <label><input id="rantro" name="mode" type="radio" value="rantro">ラントロ</label>
         </div>

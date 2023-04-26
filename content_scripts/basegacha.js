@@ -20,14 +20,18 @@ class BaseGacha {
      */
     generateUrl(){
         return chrome.storage.local.get(
-            ['query', 'border', 'sortType']
+            ['query', 'border', 'dateStart', 'dateEnd', 'sortType']
         ).then((locals) => {
             this.query = locals.query;
             this.border = locals.border;
+            this.dateStart = locals.dateStart;
+            this.dateEnd = locals.dateEnd;
             this.sortType = locals.sortType;
 
             return `${SNAPSHOT_BASE_URL}&q=${this.query}` +
-                `&_offset=${this.generateOffset()}&_sort=${this.sortType}`;
+                `&_offset=${this.generateOffset()}&_sort=${this.sortType}` +
+                `&filters[startTime][gte]=${this.dateStart}T00:00:00%2B09:00` +
+                `&filters[startTime][lte]=${this.dateEnd}T23:59:59%2B09:00`;
         })
     }
 

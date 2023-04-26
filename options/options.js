@@ -1,10 +1,12 @@
 initialize();
 function initialize() {
     chrome.storage.local.get(
-        ['query', 'border', 'sortType', 'mode']
+        ['query', 'border', 'dateStart', 'dateEnd', 'sortType', 'mode']
     ).then((locals) => {
             document.getElementById('query').value = locals.query;
             document.getElementById('border').value = locals.border;
+            document.getElementById('dateStart').value = locals.dateStart;
+            document.getElementById('dateEnd').value = locals.dateEnd;
 
             for (let elm of document.getElementsByName('sortType')) {
                 if (elm.value === locals.sortType) {
@@ -26,6 +28,8 @@ function initialize() {
 function save(){
     const query = document.getElementById('query').value;
     const border = document.getElementById('border').value;
+    const dateStart = document.getElementById('dateStart').value
+    const dateEnd = document.getElementById('dateEnd').value
 
     let sortType;
     for(let elm of document.getElementsByName('sortType')){
@@ -40,6 +44,8 @@ function save(){
     chrome.storage.local.set({
         query: query,
         border: border,
+        dateStart: dateStart,
+        dateEnd: dateEnd,
         sortType: sortType,
         mode: mode
     })

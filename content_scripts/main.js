@@ -73,9 +73,16 @@ function initialize(root){
     gachaBox.appendChild(gachaButton);
     root.appendChild(gachaBox);
 
+    const today = new Date().toLocaleString(
+        "ja-JP",
+        {year: "numeric", month: "2-digit", day: "2-digit"}
+    ).split("/").join("-");
+
     chrome.storage.local.set({
         query: DEFAULT_QUERY,
         border: DEFAULT_BORDER,
+        dateStart: DEFAULT_DATE_START,
+        dateEnd: today,
         sortType: DEFAULT_SORT_TYPE,
         mode: DEFAULT_MODE
     })
