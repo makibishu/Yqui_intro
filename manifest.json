@@ -30,10 +30,15 @@
   },
   "permissions": [
     "tabs",
-    "storage"
+    "storage",
+    "clipboardWrite"
   ],
   "host_permissions": [
     "https://*.nicovideo.jp/*",
     "https://discord.com/*"
-  ]
+  ],
+  "web_accessible_resources" : [{
+    "resources" : ["pic/general/*"],
+    "matches" : ["<all_urls>"]
+  }]
 }

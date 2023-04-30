@@ -1,20 +1,32 @@
 #gachaBox {
     display: flex;
+    justify-content: space-between;
     background: aliceblue;
     padding: 0 20px;
     font-family: Roboto, Helvetica, Arial, sans-serif;
 }
 
-#songInfo {
+#nicoiframe {
     width: 420px;
 }
 
-#authorInfo {
-    width: 20%;
-    padding: 10px;
-    margin: auto;
-    font-size: 20px;
+#movieInfo {
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+    padding: 0.5em 0 0 0;
+    border: none;
+    border-radius: 0;
+    background: none;
+    font: 16px bold;
+    resize: none;
     text-align: center;
+}
+
+#movieInfo::selection{
+    background-color: transparent;
 }
 
 .extraButton {
