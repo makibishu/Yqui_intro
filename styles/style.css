@@ -1,23 +1,35 @@
 #gachaBox {
     display: flex;
+    justify-content: space-between;
     background: aliceblue;
     padding: 0 20px;
     font-family: Roboto, Helvetica, Arial, sans-serif;
 }
 
-#songInfo {
+#nicoiframe {
     width: 420px;
 }
 
-#authorInfo {
-    width: 20%;
-    padding: 10px;
-    margin: auto;
-    font-size: 20px;
+#movieInfo {
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+    padding: 0.5em 0 0 0;
+    border: none;
+    border-radius: 0;
+    background: none;
+    font: 16px bold;
+    resize: none;
     text-align: center;
 }
 
-button {
+#movieInfo::selection{
+    background-color: transparent;
+}
+
+.extraButton {
     background-color: white;
     cursor: pointer;
     font-weight: 500;
@@ -32,12 +44,12 @@ button {
     margin: 30px 5px;
 }
 
-button:hover:enabled {
+.extraButton:hover:enabled {
     background-color: rgba(66, 66, 66, 0.04);
     border: 1px solid rgb(66, 66, 66);
 }
 
-button:disabled{
+.extraButton:disabled{
     cursor: not-allowed;
     background-color: darkgray;
 }

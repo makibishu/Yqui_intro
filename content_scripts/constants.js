@@ -12,6 +12,12 @@ const DEFAULT_QUERY = 'VOCALOID オリジナル曲';
 const DEFAULT_BORDER = 5000;
 
 /**
+ * 日付フィルターの始点初期値
+ * @const {string}
+ */
+const DEFAULT_DATE_START = '2007-03-06'
+
+/**
  * ソート順の初期値
  * @const {string}
  */

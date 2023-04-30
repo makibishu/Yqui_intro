@@ -31,47 +31,63 @@ function initialize(root){
     const gachaBox = document.createElement('div');
     gachaBox.setAttribute('id', 'gachaBox');
 
-    const songInfo = document.createElement('iframe');
-    songInfo.setAttribute('id', 'songInfo');
-    songInfo.setAttribute('width', '420');
-    songInfo.setAttribute('height', '120');
-    songInfo.setAttribute('scrolling', 'no');
-    songInfo.setAttribute('frameborder', '0');
+    const iframe = document.createElement('iframe');
+    iframe.setAttribute('id', 'nicoiframe');
+    iframe.setAttribute('width', '420');
+    iframe.setAttribute('height', '120');
+    iframe.setAttribute('scrolling', 'no');
+    iframe.setAttribute('frameborder', '0');
 
-    const authorInfo = document.createElement('div');
-    authorInfo.setAttribute('id', 'authorInfo');
+    // クリップボードを使用するためにtextareaを使用
+    const movieInfo = document.createElement('textarea');
+    movieInfo.setAttribute('id', 'movieInfo');
+    movieInfo.setAttribute('readonly', 'true');
+    movieInfo.onclick = copyToClipboard;
+    movieInfo.style.cursor =
+        `url(${chrome.runtime.getURL("../pic/general/cursor.svg")}), copy`;
 
     const playButton = document.createElement('button');
     playButton.setAttribute('id', 'playButton');
+    playButton.setAttribute('class', 'extraButton');
     playButton.onclick = play;
     playButton.textContent = 'この曲を再生';
 
     const resumeButton = document.createElement('button');
     resumeButton.setAttribute('id', 'resumeButton');
+    resumeButton.setAttribute('class', 'extraButton');
     resumeButton.onclick = pause;
     resumeButton.textContent = '一時停止/再開';
 
     const stopButton = document.createElement('button');
     stopButton.setAttribute('id', 'stopButton');
+    stopButton.setAttribute('class', 'extraButton');
     stopButton.onclick = stop_;
     stopButton.textContent = '停止';
 
     const gachaButton = document.createElement('button');
     gachaButton.setAttribute('id', 'gachaButton');
+    gachaButton.setAttribute('class', 'extraButton');
     gachaButton.onclick = doGacha;
     gachaButton.textContent = '次の曲へ'
 
-    gachaBox.appendChild(songInfo);
-    gachaBox.appendChild(authorInfo);
+    gachaBox.appendChild(iframe);
+    gachaBox.appendChild(movieInfo);
     gachaBox.appendChild(playButton);
     gachaBox.appendChild(resumeButton);
     gachaBox.appendChild(stopButton);
     gachaBox.appendChild(gachaButton);
     root.appendChild(gachaBox);
 
+    const today = new Date().toLocaleString(
+        "ja-JP",
+        {year: "numeric", month: "2-digit", day: "2-digit"}
+    ).split("/").join("-");
+
     chrome.storage.local.set({
         query: DEFAULT_QUERY,
         border: DEFAULT_BORDER,
+        dateStart: DEFAULT_DATE_START,
+        dateEnd: today,
         sortType: DEFAULT_SORT_TYPE,
         mode: DEFAULT_MODE
     })
@@ -160,12 +176,18 @@ async function stop_(){
     document.getElementById('playButton').disabled = false;
 }
 
+function copyToClipboard(){
+    const movieInfo = document.getElementById('movieInfo');
+    movieInfo.select();
+    document.execCommand('copy');
+}
+
 chrome.runtime.onMessage.addListener((
     request, options
 ) => {
     if (request.name === 'movieData') {
-        const songInfo = document.getElementById('songInfo');
-        const authorInfo = document.getElementById('authorInfo');
+        const iframe = document.getElementById('nicoiframe');
+        const movieInfo = document.getElementById('movieInfo');
 
         const movieData = request.data.movieData;
 
@@ -173,16 +195,16 @@ chrome.runtime.onMessage.addListener((
             if (movieData.startsWith('<?xml')){ // 正常なxmlが帰ってきた場合
                 currentMovie = new Movie(movieData);
 
-                songInfo.setAttribute(
+                iframe.setAttribute(
                     'src',
                     `${IFRAME_BASE_URL}${currentMovie.id}`
                 );
 
-                authorInfo.textContent = currentMovie.author;
+                movieInfo.value = `${currentMovie.title}\n- ${currentMovie.author}`;
             } else { // ガチャに失敗した場合エラーメッセージを表示
-                songInfo.removeAttribute('src');
+                iframe.removeAttribute('src');
                 currentMovie = null;
-                authorInfo.textContent = movieData;
+                movieInfo.value = movieData;
             }
         }
     }
