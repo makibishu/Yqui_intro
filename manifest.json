@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Yqui-intro",
   "description": "Yquiでのイントロクイズ出題サポート",
-  "version": "0.12",
+  "version": "0.20",
   "icons": {
     "16" : "pic/icon/icon_16.png",
     "48" : "pic/icon/icon_48.png",
