@@ -1,0 +1,30 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    width: 370px;
+}
+
+div{
+    margin: 5px 3px;
+}
+
+input:invalid{
+    color: orangered;
+    background-color: mistyrose;
+}
+
+input{
+    border: 1px solid;
+    border-radius: 3px;
+}
+
+#query {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#border{
+    text-align: right;
+}

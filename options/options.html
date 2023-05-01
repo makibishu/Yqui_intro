@@ -3,17 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <script type="text/javascript" charset="utf-8" src="options.js"></script>
+    <link rel="stylesheet" href="../styles/options.css">
     <title>Options</title>
 </head>
 <body>
     <form name="options">
         <div>
             <label for="query"><b>検索ワード</b></label><br>
-            <input id="query" name="query" type="text" autocomplete="off" size="50" required>
+            <input id="query" name="query" type="text" autocomplete="off" required>
         </div>
         <div>
             <label for="border"><b>下限順位(1~99,999)</b></label><br>
-            <input id="border" name="border" type="text" pattern="^[1-9]\d*$" maxlength="5" autocomplete="off">
+            <input id="border" name="border" type="text" pattern="^[1-9]\d*$" maxlength="5" size="2.5" autocomplete="off">
+            <label for="border">位</label>
         </div>
         <div>
             <label><b>期間絞り込み</b></label><br>
