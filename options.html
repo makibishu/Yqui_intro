@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" charset="utf-8" src="options.js"></script>
+    <title>Options</title>
+</head>
+<body>
+    <form name="options">
+        <div>
+            <label>検索タグ</label>
+            <input id="query" name="query" type="text" autocomplete="off" size="50" required>
+        </div>
+        <div>
+            <label>平均順位</label><br>
+            <input id="border" name="border" type="text" pattern="^[1-9]\d*$" maxlength="5" autocomplete="off">
+        </div>
+        <div>
+            <label>ソート</label><br>
+            <label><input id="viewSort" name="sortType" type="radio" value="viewCounter">再生数順</label>
+            <label><input id="mylistSort" name="sortType" type="radio" value="mylistCounter">マイリスト数順</label>
+            <label><input id="commentSort" name="sortType" type="radio" value="commentCounter">コメント数順</label>
+            <label><input id="likeSort" name="sortType" type="radio" value="likeCounter">いいね数順</label>
+        </div>
+        <div>
+            <label>モード</label><br>
+            <label><input id="intro" name="mode" type="radio" value="intro">イントロ</label>
+            <label><input id="rantro" name="mode" type="radio" value="rantro">ラントロ</label>
+        </div>
+        <div>
+            <input id="saveButton" type="submit" value="保存">
+        </div>
+    </form>
+</body>
+</html>
